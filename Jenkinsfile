@@ -11,24 +11,24 @@ pipeline{
         //	jdk 'jdk8' 
     	//}
 	stages{
-		stage('Deploy Application'){
-			steps{
-				sh """
-				ssh groupproject@51.137.130.31 << EOF
+	    stage('Deploy Application'){
+		steps{
+		    sh """
+		    ssh groupproject@51.137.130.31 << EOF
 				
-				//running back end maven (petclinic-rest)
-				rm -rf spring-petclinic-rest
-				git clone https://github.com/spring-petclinic/spring-petclinic-rest
-				cd spring-petclinic-rest
-				./mvnw spring-boot:run
-				
-				//cd ..
-				//running frontend api (petclinic-angular)
-				//rm -rf spring-petclinic-angular
-				//git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
-				//cd spring-petclinic-angular
-				"""
-			}
+		//running back end maven (petclinic-rest)
+		    rm -rf spring-petclinic-rest
+		    git clone https://github.com/spring-petclinic/spring-petclinic-rest
+		    cd spring-petclinic-rest
+		    ./mvnw spring-boot:run
+		
+		//cd ..
+		//running frontend api (petclinic-angular)
+		//rm -rf spring-petclinic-angular
+		//git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
+		//cd spring-petclinic-angular
+		"""
 		}
+	    }
 	}
 }
