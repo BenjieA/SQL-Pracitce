@@ -6,10 +6,10 @@
 //deploy actual frontend 
 pipeline{
 	agent any
-	tools { 
-        	maven 'Maven 3.3.9' 
-        	jdk 'jdk8' 
-    	}
+	//tools { 
+        //	maven 'Maven 3.3.9' 
+        //	jdk 'jdk8' 
+    	//}
 	stages{
 		stage('Deploy Application'){
 			steps{
