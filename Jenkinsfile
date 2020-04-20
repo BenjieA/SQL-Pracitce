@@ -6,14 +6,27 @@
 //deploy actual frontend 
 pipeline{
 	agent any
+	tools { 
+        	maven 'Maven 3.3.9' 
+        	jdk 'jdk8' 
+    	}
 	stages{
 		stage('Deploy Application'){
 			steps{
 				sh """
-				ssh groupproject@ << EOF
-				rm -rf spring-petclinic-angular
-				git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
-				cd spring-petclinic-angular
+				ssh groupproject@51.137.130.31 << EOF
+				
+				//running back end maven (petclinic-rest)
+				rm -rf spring-petclinic-rest
+				git clone https://github.com/spring-petclinic/spring-petclinic-rest.git
+				cd spring-petclinic-rest
+				./mvnw spring-boot:run
+				
+				//cd ..
+				//running frontend api (petclinic-angular)
+				//rm -rf spring-petclinic-angular
+				//git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
+				//cd spring-petclinic-angular
 				"""
 			}
 		}
