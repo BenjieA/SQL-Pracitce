@@ -18,7 +18,7 @@ pipeline{
 				
 				//running back end maven (petclinic-rest)
 				rm -rf spring-petclinic-rest
-				git clone https://github.com/spring-petclinic/spring-petclinic-rest.git
+				git clone https://github.com/spring-petclinic/spring-petclinic-rest
 				cd spring-petclinic-rest
 				./mvnw spring-boot:run
 				
