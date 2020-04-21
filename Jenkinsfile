@@ -11,7 +11,7 @@ pipeline{
         //	jdk 'jdk8' 
     	//}
 	stages{
-	    stage('Deploy Application'){
+	    stage('Deploy'){
 		steps{
 		    sh """
 		    ssh -t -t -R groupproject@51.137.130.31 << EOF
