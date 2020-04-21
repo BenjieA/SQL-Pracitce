@@ -13,7 +13,7 @@ pipeline{
 	stages{
 	    stage('Deploy'){
 		steps{
-		    sh """
+		    sh '''
 		    ssh groupproject@51.137.130.31 << EOF
 		    rm -rf spring-petclinic-rest
 		    git clone https://github.com/spring-petclinic/spring-petclinic-rest
@@ -25,7 +25,7 @@ pipeline{
 		//rm -rf spring-petclinic-angular
 		//git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
 		//cd spring-petclinic-angular
-		"""
+		    '''
 		}
 	    }
 	}
