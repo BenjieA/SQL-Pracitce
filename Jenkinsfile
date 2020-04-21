@@ -14,7 +14,7 @@ pipeline{
 	    stage('Deploy Application'){
 		steps{
 		    sh """
-		    ssh -T groupproject@51.137.130.31 << EOF
+		    ssh groupproject@51.137.130.31 /bin/bash/ << EOF
 				
 		//running back end maven (petclinic-rest)
 		    rm -rf spring-petclinic-rest
