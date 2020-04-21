@@ -14,6 +14,7 @@ pipeline{
 	    stage('Deploy'){
 		steps{
 		    sh '''
+		    cat ~/.ssh/id_rsa
 		    ssh -i ~/.ssh/id_rsa groupproject@51.137.130.31 << EOF
 		    rm -rf spring-petclinic-rest
 		    git clone https://github.com/spring-petclinic/spring-petclinic-rest
