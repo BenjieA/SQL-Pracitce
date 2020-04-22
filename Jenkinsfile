@@ -19,7 +19,8 @@ pipeline{
 		    rm -rf spring-petclinic-rest
 		    git clone https://github.com/spring-petclinic/spring-petclinic-rest
 		    cd spring-petclinic-rest
-		    ./mvnw spring-boot:run
+		    docker run -p 9966:9966 springcommunity/spring-petclinic-rest
+		    
 		//running back end maven (petclinic-rest)
 		//cd ..
 		//running frontend api (petclinic-angular)
