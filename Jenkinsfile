@@ -19,7 +19,7 @@ pipeline{
 		    rm -rf spring-petclinic-rest
 		    git clone https://github.com/spring-petclinic/spring-petclinic-rest 
 		    cd spring-petclinic-rest
-		    if(docker inspect -f '{{.State.Running}}' rest == 'true')
+		    if(docker inspect -f '{{.State.Running}}' rest == 'true'){
 		       docker start rest
 		    }
 		    else{
