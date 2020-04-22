@@ -21,15 +21,10 @@ pipeline{
 		    cd spring-petclinic-rest
 		    
 		    
-		    name = 'rest'
-		    docker start rest || docker run --name "$name" -p 9966:9966 springcommunity/spring-petclinic-rest
+		  
+		    docker start rest || docker run --name rest -p 9966:9966 springcommunity/spring-petclinic-rest
 		    
-		    [[ $(docker ps -f "name=$name" --format '{{.Names}}') == $name ]] ||
-                    docker run --name "$name" -p 9966:9966 springcommunity/spring-petclinic-rest
-		    if [docker inspect -f '{{.State.Running}}' rest == "false"];
-		    then
-		       docker start $name	
-		    fi
+		  
 		   
 		    
 		    
