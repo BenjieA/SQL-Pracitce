@@ -19,13 +19,12 @@ pipeline{
 		    rm -rf spring-petclinic-rest
 		    git clone https://github.com/spring-petclinic/spring-petclinic-rest 
 		    cd spring-petclinic-rest
-		   
-		    if [docker inspect -f '{{.State.Running}}' rest == "true"];
+		    name = rest
+		    [[ $(docker ps -f "name=$name" --format '{{.Names}}') == $name ]] ||
+                    docker run --name "$name" -p 9966:9966 springcommunity/spring-petclinic-rest
+		    if [docker inspect -f '{{.State.Running}}' rest == "false"];
 		    then
-		       docker start rest
-		   
-		    else
-		       docker run -p 9966:9966 --name rest springcommunity/spring-petclinic-rest	
+		       docker start $name	
 		    fi
 		   
 		    
