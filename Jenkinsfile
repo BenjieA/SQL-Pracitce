@@ -29,7 +29,6 @@ pipeline{
 		    cd spring-petclinic-angular
 		    
 		    npm install --save-dev @angular/cli@latest
-                    if npm version > 5.0 delete package-lock.json file  ( bug in npm 5.0 - this file prevent correct packages install)
                     npm install
 		   
 		    ng serve
