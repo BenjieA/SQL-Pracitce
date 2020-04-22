@@ -15,7 +15,7 @@ pipeline{
 		steps{
 		    sh '''
 		    pwd
-		    ssh groupproject@51.137.130.31 << EOF
+		    ssh app-dev@51.140.60.183 << EOF
 		    rm -rf spring-petclinic-rest
 		    git clone https://github.com/spring-petclinic/spring-petclinic-rest
 		    cd spring-petclinic-rest
