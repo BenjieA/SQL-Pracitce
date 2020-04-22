@@ -22,23 +22,6 @@ pipeline{
 		    git clone https://github.com/spring-petclinic/spring-petclinic-angular
 		    cd spring-petclinic-rest
                     docker start rest || docker run --name rest -p 9966:9966 springcommunity/spring-petclinic-rest
-		    
-		    npm uninstall -g angular-cli @angular/cli
-                    npm cache clean
-                    npm install -g @angular/cli@latest
-		    cd ..
-		    cd spring-petclinic-angular
-		    
-		    npm install --save-dev @angular/cli@latest
-                    npm install
-		   
-		    ng serve
-		    
-		  
-		   
-		    
-		    
-		
 		    '''
 		}
 	    }
