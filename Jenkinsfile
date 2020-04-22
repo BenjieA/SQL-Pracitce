@@ -21,10 +21,10 @@ pipeline{
 		    cd spring-petclinic-rest
 		    script{
 		       if(docker inspect -f '{{.State.Running}}' rest == 'true'){
-		          docker start rest
+		       		docker start rest
 		       }
 		       else{
-		          docker run -p 9966:9966 --name rest springcommunity/spring-petclinic-rest	
+		       		docker run -p 9966:9966 --name rest springcommunity/spring-petclinic-rest	
 		       }
 		   } 
 		    
