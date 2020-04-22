@@ -30,12 +30,7 @@ pipeline{
 		   
 		    
 		    
-		//running back end maven (petclinic-rest)
-		//cd ..
-		//running frontend api (petclinic-angular)
-		//rm -rf spring-petclinic-angular
-		//git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
-		//cd spring-petclinic-angular
+		
 		    '''
 		}
 	    }
