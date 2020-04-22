@@ -22,7 +22,7 @@ pipeline{
 		    
 		    
 		    name = 'rest'
-		    docker start $name || docker run --name "$name" -p 9966:9966 springcommunity/spring-petclinic-rest
+		    docker start rest || docker run --name "$name" -p 9966:9966 springcommunity/spring-petclinic-rest
 		    
 		    [[ $(docker ps -f "name=$name" --format '{{.Names}}') == $name ]] ||
                     docker run --name "$name" -p 9966:9966 springcommunity/spring-petclinic-rest
